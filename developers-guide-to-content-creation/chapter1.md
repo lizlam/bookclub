@@ -1,11 +1,13 @@
-#Reasons for blogging:
+# Reasons for blogging:
 To get better at writing.
 To write about the things I love.
 
-#Mission Statement:
+# Mission Statement:
 To log the things I’m learning and problems I’ve solved at work.
+or
+Consistently write about the things I'm learning and create an index of knowledge for myself and others.
 
-#Five sentences about my target reader:
+# Five sentences about my target reader:
 
 1. They are software engineers and/or interested in tech.
 2. They have a beginner or junior level understanding of coding. (i.e. I'm not writing about what an "if" statement is....for now)
