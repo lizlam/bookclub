@@ -14,19 +14,19 @@ Name things you know or do well.
 * react 
 * drawing
 
-# Guided Exercise #4 - Idea Inventory: Your Exisint Content
-https://github.com/lizlam/talks/blob/master/git-basics-by-grepliz.pdf, slides, current
-https://github.com/lizlam/p4blog, old perforce blogs, outdated
-https://github.com/lizlam/indie-conquest-adventure, react side project, current
-https://www.hannythepenguin.com/, svelte side project, current
+# Guided Exercise #4 - Idea Inventory: Your Exising Content
+https://github.com/lizlam/talks/blob/master/git-basics-by-grepliz.pdf, slides, current    
+https://github.com/lizlam/p4blog, old perforce blogs, outdated    
+https://github.com/lizlam/indie-conquest-adventure, react side project, current    
+https://www.hannythepenguin.com/, svelte side project, current    
 
 # Guided Exercise #5 - Idea Inventory: What I Want to Learn
-rust
-svelte
-kernel development
-how to build a game
-deno
-web assembly
+rust    
+svelte    
+kernel development    
+how to build a game    
+deno    
+web assembly     
 
 # Guided Exercise #6 - Idea Inventory: Research Worksheet
 5 ideas for research:
