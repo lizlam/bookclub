@@ -1,3 +1,3 @@
 # Bookclub
-Bookclub related repo
+Bookclub related repo.   
 Mostly notes.
