@@ -1,7 +1,6 @@
 # Guided Exercise #9 - Abstract Worksheet
 Title: Rust & Svelte: Part 1 - Hello World    
-
-Abstract: This blog will be a show and tell on how to glue together Rust and Frontend code using Web Assembly.
+Abstract: This blog will be a show and tell on how to glue together Rust and Frontend code using WebAssembly.
 I happen to be using Svelte, but it can be done with any Frontend framework or just JavaScript.  The purpose
 is to give a gentle introduction on how it's done with a Hello World example.
 
@@ -16,7 +15,7 @@ Next Steps:  Send input from the front end to the Rust code.
 
 # Guided Exercise #10 - Blog Post Outline   
 Intro:    
-A good way to expand your front end engineering skills is to learn Rust and Web Assembly.
+A good way to expand your front end engineering skills is to learn Rust and WebAssembly.
 
 Prereqs: 
 * A little Rust knowledge
@@ -42,10 +41,14 @@ Next Steps:
 
 # Guided Exercise #11 - First 500 words
 I think I am the worse Front End Engineer.  I love the command line and generally stay clear of GUIs if I can help it.  My go to editor for many years was vi (now vim).  But what I love about being a Front End Engineer is the endless possibilities of things to learn. The front end world moves fast and there is always a new library or a new framework to sink your teeth into.  
-If you want to expand your horizons, you can tease into backend work and be a full stack engineer.  Another direction is side stepping into Web Assembly and Rust.  Web Assembly brings the power of compiled code to the browser.  Rust, generally thought of as a systems programming language, is a popular choice. I happen to be learning Svelte as well and thought that would be a good place to integrate these technologies.  This is the beginning of a personal journey starting with a simple Hello World example.   
+If you want to expand your horizons, you can dip your toes into backend waters and be a full stack engineer.  Another direction is side stepping into WebAssembly and Rust.  WebAssembly brings the power of compiled code to the browser.  Rust, generally thought of as a systems programming language, is a popular choice.  This is because the WebAssembly binary includes the runtime and the runtime for Rust is extremely small.  Along the same vein, Svelte is an upcoming front end framework that compiles itself away and you are left with vanilla JavaScript.  This means the bundle size is also extremely small producing fast web applications.  I happen to be learning Svelte as well and thought that would be a good place to integrate these technologies.  This is the beginning of a personal journey starting with a simple Hello World example.   
 
 Environment Setup:     
-`brew install rustup`
+* Install `rustup` according to the [rustup website](https://rustup.rs/).    
+NOTE: `rustup` will install `cargo` (the rust package manager) and `rustc` (the rust compiler).    
+* Install `wasm-pack` according to the [wasm-pack site](https://rustwasm.githu.io/wasm-pack/installer/)     
+* Install `cargo-generate` using this command: `cargo install cargo-generate`    
+* [Install node](https://nodejs.org/en/), this will also install `npm` and `npx`.
 
 Create A Rust Project:     
 `cargo generate --git https://github.com/rustwasm/wasm-pack-template --name helloworld`
