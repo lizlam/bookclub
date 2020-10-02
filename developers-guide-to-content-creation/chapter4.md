@@ -47,12 +47,12 @@ If you want to expand your horizons, you can dip your toes into backend waters a
 ## Environment Setup     
 * Install `rustup` according to the [rustup website](https://rustup.rs/).    
 NOTE: `rustup` will install `cargo` (the rust package manager) and `rustc` (the rust compiler).    
-* Install `wasm-pack` according to the [wasm-pack site](https://rustwasm.githu.io/wasm-pack/installer/)     
+* Install `wasm-pack` using this command: `cargo install wasm-pack`    
 * Install `cargo-generate` using this command: `cargo install cargo-generate`    
 * [Install node](https://nodejs.org/en/), this will also install `npm` and `npx`.
 
 ## Create A Rust Project     
-`cargo generate --git https://github.com/rustwasm/wasm-pack-template --name helloworld`
+`cargo generate --git https://github.com/rustwasm/wasm-pack-template --name helloworld`    
 `cd helloworld/src`    
 
 If you take a look in the `src` directory, there will be 2 files:
@@ -82,8 +82,42 @@ pub fn greet() {
 }
 ```
 
+Modify the `greet()` slightly to look like this:
+```
+pub fn greet() -> String {
+    return "Hello WebAssembly!".to_string();
+}
+```
+
+Essentially, we are returning a string instead of calling the alert function.
+
+Also, due to this [bug](https://github.com/rustwasm/wasm-pack/issues/886), we will need to
+add the following to your `Cargo.toml` file:
+```
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+```
+
+Let's now navigate back to our project root and build this thing!
+`cd ..`    
+`wasm-pack build`
+
+After the build has finished, there should be a `pkg` directory.    
+
+We have now created our first WebAssembly build!
+
+
 ## Create a Svelte Project    
 `npx degit sveltejs/template helloworld-site`
+`cd helloworld-site`  
+`npm install @wasm-tool/rollup-plugin-rust`    
+`npm install`    
+`mkdir public/pkg`     
+`cp /path/to/helloworld/pkg/* public/pkg`
+
+`npm run dev`
+
 
 ## Putting it all together    
 
