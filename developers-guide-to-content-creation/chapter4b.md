@@ -8,7 +8,7 @@ Now, if you're not familiar with the command line (like a Linux Kernel Developer
 can feel scary.  With so many GUI tools out there, you may feel it's not even
 necessary to learn.  
 
-##Let's get started by creating a new git repository.
+## Let's get started by creating a new git repository.
 
 Open a terminal and run the following commands:
 ```
@@ -29,13 +29,13 @@ Also, let take a look at the state of the git workspace:
     git status
 ```
 
-##Let’s add a file to our working directory
+## Let’s add a file to our working directory.
 
 Type the following command:
 ```
     echo ‘hello world’ > hello.txt
 ```    
-Let’s take a look at the status again:
+Take a look at the status again:
 ```
     git status
 ```
@@ -45,7 +45,7 @@ The status gives us a clue on what we need to do next:
 ```    
 Git knows we have a new file with the intention to add it to the system but we have not committed it yet.
 
-##Let’s commit our file to the repo
+## Let’s commit our file to the repo.
 
 Type the following:
 ```
@@ -66,7 +66,7 @@ The objects directory contain the actual files that our stored.  They are organi
 For example, look at subdirectory 3b that contains the file: 18e512dba79e4c8300dd08aeb37f8e728b8dad
 For those who are curious, run: git hash-object hello.txt 
 
-##Let’s create a new branch
+## Let’s create a new branch
 
 Type the following in your terminal:
 ```
@@ -77,7 +77,7 @@ We should be able to see both branches now:
 ```
     git branch
 ```
-##Let’s make a change on our new branch
+## Let’s make a change on our new branch
 
 Edit hello.txt by adding a 2nd line saying who you are.  (Example: “I am Liz.”)
 If you check the status, you will see git knows we made changes:
@@ -92,7 +92,7 @@ Now we want to commit them:
 ```
     git commit -m “Saying who I am”
 ```
-##Let's take a look at our history so far.
+## Let's take a look at our history so far.
 
 Type in the terminal:
 ```
@@ -105,7 +105,7 @@ Let’s check on master:
     git log --oneline
     cat hello.txt
 ```
-##Time to merge!
+## Time to merge!
 
 We want to merge our changes from dev to master.
 Remember, the target branch is always the branch you are on.  Use ‘git branch’ if you are not sure where you are.
@@ -117,7 +117,7 @@ Now we should see that master has the same changes as our dev branch.
     git log --oneline
     cat hello.txt
 ```
-##What about cloning?
+## What about cloning?
 
 Open another terminal window and clone the repo we just created:
 ```
@@ -129,7 +129,7 @@ You should see an exact copy of what we had in the original project:
     git log --oneline 
     cat hello.txt 
 ```
-##What about pulling?
+## What about pulling?
 
 To keep our repo updated, we need to pull from the original/remote.
 Go to the first terminal window with the original project open and make a change and commit it.   
