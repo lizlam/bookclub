@@ -1,4 +1,4 @@
-# Guided Excercise #7 - Prioritize 3 ideas in the order you want to publish them.
+# Guided Exercise #7 - Prioritize 3 ideas in the order you want to publish them.
 
 |Title                                            |Status |Draft Due | Publish Date | Primary CTA Copy | CTA URL | Post URL|
 |-------------------------------------------------|-------|----------|--------------|------------------|---------|---------|
@@ -6,7 +6,7 @@
 |10 projects using Rust: Part 1                   |       |          |              | read rust book   |         |         |
 |10 projects using Rust: Part 2                   |       |          |              |    try rust!     |         |         |
 
-# Guided Excercise #8 - Publishing cadence
+# Guided Exercise #8 - Publishing cadence
 
 I will publish a new blog every month.
 
