@@ -7,7 +7,9 @@ One could say it was written by Linux Kernel Developers for Linux Kernel Develop
 As a result, the initial environment for working with git is the command line.
 Now, if you're not familiar with the command line (like a Linux Kernel Developer), this
 can feel scary.  With so many GUI tools out there, you may feel it's not even
-necessary to learn.  
+necessary to learn.  I want to suggest that knowing how the git GUIs work under the hood is
+super helpful as a developer.  With some diligence and working through this tutorial, you'll be a 
+git command line power user in no time...well with some time.
 
 ## Let's get started by creating a new git repository.
 
