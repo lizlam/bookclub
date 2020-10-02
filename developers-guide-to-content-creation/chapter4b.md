@@ -1,4 +1,5 @@
 # Guided Exercise #11 - First 500 words (again)
+# Title: A Gentle Introduction to the Git Command Line
 
 Git is a version control system written by Linus Torvalds in 2005. 
 It was created specifically to manage the Linux Kernel Project.
