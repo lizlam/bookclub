@@ -123,10 +123,11 @@ You should see a directory structure that looks like this:
 |____info
 ```
 The objects directory contain the actual files that our stored.  They are organized by subdirectories of the first 2 characters of the SHA1 of the file.
-For example, look at subdirectory *3b* that contains the file: *18e512dba79e4c8300dd08aeb37f8e728b8dad*
+For example, look at subdirectory **3b** that contains the file: **18e512dba79e4c8300dd08aeb37f8e728b8dad**
+
 For those who are curious, run: `git hash-object hello.txt` 
 
-## Let’s create a new branch
+## Let’s create a new branch.
 
 Type the following in your terminal:
 ```
@@ -139,7 +140,7 @@ We should be able to see both branches now:
     * dev_llam
     master
 ```
-## Let’s make a change on our new branch
+## Let’s make a change on our new branch.
 
 Edit hello.txt by adding a 2nd line saying who you are.  (Example: “I am Liz.”)
 If you check the status, you will see git knows we made changes:
