@@ -21,7 +21,8 @@ Open a terminal and run the following commands:
 
 ```
 
-What did we just do?  We just created an empty git repository.
+What did we just do?  
+We just created an empty git repository.
 
 Let’s take a look at .git directory:
 ```
@@ -92,7 +93,9 @@ The status gives us a clue on what we need to do next:
 ```
     $ git add .
 ```    
-Git knows we have a new file with the intention to add it to the system but we have not committed it yet.
+Git knows we have a new file with the *intention* to add it to the repository but we have not committed it yet.
+This is often a point of confusion for new users.  I think of `git add` like an engagement ring.  It's a promise
+to commit, but we're not there yet.
 
 ## Let’s commit our file to the repo.
 
@@ -142,6 +145,7 @@ We should be able to see both branches now:
     * dev_llam
     master
 ```
+
 ## Let’s make a change on our new branch.
 
 Edit hello.txt by adding a 2nd line saying who you are.  (Example: “I am Liz.”)
@@ -211,11 +215,13 @@ Let’s start by fetching the changes (note: fetching is different from pulling)
     $ git status
 ```    
 Now our repo is updated but our working directory is not.
+This is because fetching only updates our local repo, while pulling will fetch and merge it into our local workspace.
 ```
     $ git pull
     $ git log --oneline
 ```
-Yay! We’re done!
+
+Yay! We’re done! We have successfully pulled the changes from a remote repo.
 
 You now know how to:
 * Create a new git repository
