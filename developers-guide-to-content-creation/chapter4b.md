@@ -107,8 +107,9 @@ We should be able to see both branches now:
 ```
 You may be thinking, "Wait??!! I didn't `cd` into a new directory. How did I switch to a new branch?".   
 This can bit a little bit confusing for those coming from other version control systems.  
-I think of it like someone pulled the rug out from underneath and replaced it with a new one without me every having 
-to get up. You are physically sitting in the same directory in the filesystem, but the branch has been changed underneath you.
+
+I think of it like someone pulled the rug out from under me and replaced it with a new one without me ever having 
+to get up. You are physically sitting in the same directory in the filesystem, but the branch has been changed from underneath you.
 
 ## Let’s make a change on our new branch.
 
