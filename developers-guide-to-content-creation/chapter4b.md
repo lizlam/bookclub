@@ -11,6 +11,8 @@ necessary to learn.  I want to suggest that knowing how the git GUIs work under 
 super helpful as a developer.  With some diligence and working through this tutorial, you'll be a 
 git command line power user in no time...well with some time.
 
+NOTE: I leave out some of the git output for clarity.
+
 ## Let's get started by creating a new git repository.
 
 Open a terminal and run the following commands:
@@ -24,41 +26,7 @@ Open a terminal and run the following commands:
 What did we just do?  
 We just created an empty git repository.
 
-Let’s take a look at .git directory:
-```
-    $ ls -la .git 
-```
-
-You will see the following directory structure:
-```
-.
-|____.git
-| |____config
-| |____objects
-| | |____pack
-| | |____info
-| |____HEAD
-| |____info
-| | |____exclude
-| |____description
-| |____hooks
-| | |____commit-msg.sample
-| | |____pre-rebase.sample
-| | |____pre-commit.sample
-| | |____applypatch-msg.sample
-| | |____fsmonitor-watchman.sample
-| | |____pre-receive.sample
-| | |____prepare-commit-msg.sample
-| | |____post-update.sample
-| | |____pre-applypatch.sample
-| | |____pre-push.sample
-| | |____update.sample
-| |____refs
-| | |____heads
-| | |____tags
-| |____branches
-```
-Also, let take a look at the state of the git workspace:
+Let take a look at the state of the git workspace:
 ```
     $ git status
     On branch master
@@ -97,7 +65,21 @@ Git knows we have a new file with the *intention* to add it to the repository bu
 This is often a point of confusion for new users.  I think of `git add` like an engagement ring.  It's a promise
 to commit, but we're not there yet.
 
-## Let’s commit our file to the repo.
+Let's take a look at the status again:
+```
+    $ git status
+    On branch master
+
+    No commits yet
+
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+
+	    new file:   hello.txt
+
+```
+
+## Time to commit our file to the repo.
 
 Type the following:
 ```
@@ -109,34 +91,12 @@ How do we know what branch we are currently on?
      $ git branch
      * master
 ```
-Curious about our .git directory?
-
-Let’s see what our .git directory looks like now:
-```
-    $ ls -la .git/objects
-```    
-You should see a directory structure that looks like this:
-```
-.
-|____68
-| |____aba62e560c0ebc3396e8ae9335232cd93a3f60
-|____3b
-| |____18e512dba79e4c8300dd08aeb37f8e728b8dad
-|____pack
-|____11
-| |____3f69060fab658b60408369029c008cdcdbf9c1
-|____info
-```
-The objects directory contain the actual files that our stored.  They are organized by subdirectories of the first 2 characters of the SHA1 of the file.
-For example, look at subdirectory **3b** that contains the file: **18e512dba79e4c8300dd08aeb37f8e728b8dad**
-
-For those who are curious, run: `git hash-object hello.txt` 
-
 ## Let’s create a new branch.
 
 Type the following in your terminal:
 ```
     $ git checkout -b dev_llam
+      Switched to a new branch 'dev_llam'
 ```
 This will create a new branch and switch to that branch.  
 We should be able to see both branches now:
@@ -145,13 +105,30 @@ We should be able to see both branches now:
     * dev_llam
     master
 ```
+You may be thinking, "Wait??!! I didn't `cd` into a new directory. How did I switch to a new branch?".   
+This can bit a little bit confusing for those coming from other version control systems.  
+I think of it like someone pulled the rug out from underneath and replaced it with a new one without me every having 
+to get up. You are physically sitting in the same directory in the filesystem, but the branch has been changed underneath you.
 
 ## Let’s make a change on our new branch.
 
 Edit hello.txt by adding a 2nd line saying who you are.  (Example: “I am Liz.”)
 If you check the status, you will see git knows we made changes:
-```
+``` 
+    $ echo 'I am Liz.' >> hello.txt
+    $ cat hello.txt
+      hello world
+      I am Liz.
     $ git status
+    On branch dev_llam
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+	    modified:   hello.txt
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
 ```  
 We want to add our changes:
 ```
@@ -166,25 +143,38 @@ Now we want to commit them:
 Type in the terminal:
 ```
     $ git log --oneline
+      187c6fa (HEAD -> dev_llam) Saying who I am
+      deccda5 (master) Commit first file to the repo.
 ```
 We now have two commits in our history in our dev branch.
+
+NOTE: The seemingly random characters in front of our commit message is called a commit SHA. 
+This commit SHA includes information about the author and date and will be unique to you.
+If you are following along on your terminal, don't worry if the output looks a little different.
+
 Let’s check on master:
 ```
     $ git checkout master
     $ git log --oneline
+      deccda5 (HEAD -> master) Commit first file to the repo.
     $ cat hello.txt
+      hello world
 ```
 ## Time to merge!
 
 We want to merge our changes from dev to master.
-Remember, the target branch is always the branch you are on.  Use ‘git branch’ if you are not sure where you are.
+Remember, the target branch is always the branch you are on.  Use `git branch` if you are not sure where you are.
 ```
     $ git merge dev_llam
 ```   
 Now we should see that master has the same changes as our dev branch.
 ```
     $ git log --oneline
+      187c6fa (HEAD -> master, dev_llam) Saying who I am
+      deccda5 Commit first file to the repo.
     $ cat hello.txt
+      hello world
+      I am Liz.
 ```
 ## What about cloning?
 
@@ -196,32 +186,56 @@ You should see an exact copy of what we had in the original project:
 ```
     $ cd project2
     $ git log --oneline 
+      187c6fa (HEAD -> master, dev_llam) Saying who I am
+      deccda5 Commit first file to the repo.
     $ cat hello.txt 
 ```
 ## What about pulling?
 
 To keep our repo updated, we need to pull from the original/remote.
-Go to the first terminal window with the original project open and make a change and commit it.   
-Go back to the second terminal window with project2 open and check its status:
-```
-    $ git status
-```
-Let’s pull!
 
-Our cloned project (project2) does not know it is out of date with the original.
-Let’s start by fetching the changes (note: fetching is different from pulling).
+Go to the *first* terminal window with the original project open and make a change and commit it.  
 ```
-    $ git fetch origin dev_llam
+   $ echo 'I love coffee!' >> hello.txt
+   $ git add .
+   $ git commit -m "Add line about my love of caffeine."
+```
+
+Go back to the *second* terminal window with project2 open and check its status:
+```
     $ git status
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    nothing to commit, working tree clean
+```
+That's interesting.  Didn't we just make a change in the original project?!?
+Our cloned project (project2) does not know it is out of date with the original.
+That is because we need to *fetch* the changes (note: fetching is different from pulling).
+```
+    $ git fetch origin master
+    $ git status
+      On branch master
+      Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+        (use "git pull" to update your local branch)
+
+      nothing to commit, working tree clean
+
 ```    
-Now our repo is updated but our working directory is not.
+Great! Now our repo is updated...but our working directory is not.
 This is because fetching only updates our local repo, while pulling will fetch and merge it into our local workspace.
+As the git output suggest, let's pull!
 ```
     $ git pull
     $ git log --oneline
+      fb58b27 (HEAD -> master, origin/master, origin/HEAD) Add line about my love of caffeine.
+      187c6fa (origin/dev_llam) Saying who I am
+      deccda5 Commit first file to the repo.
 ```
 
-Yay! We’re done! We have successfully pulled the changes from a remote repo.
+Yay! We’re done! We have successfully pulled the coffee change from a remote repo.
+
+If you've made it this far, you are a trooper! Congratulations!
 
 You now know how to:
 * Create a new git repository
@@ -230,3 +244,4 @@ You now know how to:
 * Clone a repository
 * Fetch and pull changes
 
+Hopefully this was an insightful glimpse of the things possible with `git` and the command line at your finger tips.
