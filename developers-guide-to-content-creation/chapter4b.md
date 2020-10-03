@@ -103,7 +103,7 @@ We should be able to see both branches now:
 ```
     $ git branch
     * dev_llam
-    master
+      master
 ```
 You may be thinking, "Wait??!! I didn't `cd` into a new directory. How did I switch to a new branch?".   
 This can bit a little bit confusing for those coming from other version control systems.  
