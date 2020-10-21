@@ -4,11 +4,11 @@ questions:
 2, Does content tagged seem to cover topics like your content?
 3. Would people expect to see your content in this tag category?
 
-git:
+git: YYY
 
-command line:
+command line: YYY
 
-intro:
+intro: NNN
 
-version control:
+version control: YYY
 
