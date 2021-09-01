@@ -1,0 +1,11 @@
+Ruby Notes:
+
+unless
+until
+
+one line if statements, good or bad?
+```
+puts "This is true is x equals 4" if x == 4
+```
+
+0 is true!!
