@@ -1,5 +1,7 @@
 Ruby Notes:
 
+Day 1
+
 unless
 until
 
@@ -9,3 +11,7 @@ puts "This is true is x equals 4" if x == 4
 ```
 
 0 is true!!
+
+Day 2
+
+
